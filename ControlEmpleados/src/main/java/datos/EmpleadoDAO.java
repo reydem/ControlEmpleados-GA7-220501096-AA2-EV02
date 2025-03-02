@@ -1,3 +1,4 @@
+// /webapps/infoEmpleo-GA7-220501096-AA2-EV02/ControlEmpleados/src/main/java/datos/EmpleadoDAO.java
 package datos;
 
 import java.sql.*;
@@ -10,32 +11,31 @@ import modelo.Empleado;
  * @author ubaldo
  */
 public class EmpleadoDAO {
-    //CRUD - Create - Read - Update - Delete 
+    // CRUD - Create - Read - Update - Delete 
     private static final String SQL_SELECT = 
-            "SELECT id_empleado, nombre, apellido, email, telefono, saldo FROM empleados";
+            "SELECT id, nombre, empresa, descripcion, salario FROM info_empleo";
     private static final String SQL_INSERT = 
-            "INSERT INTO empleados(nombre, apellido, email, telefono, saldo) VALUES(?, ?, ?, ?, ?)";
+            "INSERT INTO info_empleo(nombre, empresa, descripcion, salario) VALUES(?, ?, ?, ?)";
     private static final String SQL_SELECT_BY_ID = 
-            "SELECT id_empleado, nombre, apellido, email, telefono, saldo FROM empleados WHERE id_empleado = ?";
+            "SELECT id, nombre, empresa, descripcion, salario FROM info_empleo WHERE id = ?";
     private static final String SQL_UPDATE = 
-            "UPDATE empleados SET nombre=?, apellido=?, email=?, telefono=?, saldo=? WHERE id_empleado=?";
+            "UPDATE info_empleo SET nombre=?, empresa=?, descripcion=?, salario=? WHERE id=?";
     private static final String SQL_DELETE = 
-            "DELETE FROM empleados WHERE id_empleado = ?";
+            "DELETE FROM info_empleo WHERE id = ?";
     
     public List<Empleado> listar(){
         List<Empleado> empleados = new ArrayList<>();
         try(Connection conn = Conexion.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(SQL_SELECT);
                 ResultSet rs = stmt.executeQuery()){
-            // Iteramos los empleados de bd
+            // Iteramos los empleados de la BD
             while(rs.next()){
                 Empleado empleado = new Empleado(
-                        rs.getInt("id_empleado"),
+                        rs.getInt("id"),
                         rs.getString("nombre"),
-                        rs.getString("apellido"),
-                        rs.getString("email"),
-                        rs.getString("telefono"),
-                        rs.getDouble("saldo")
+                        rs.getString("empresa"),
+                        rs.getString("descripcion"),
+                        rs.getDouble("salario")
                 );
                 empleados.add(empleado);
             }
@@ -43,7 +43,6 @@ public class EmpleadoDAO {
            ex.printStackTrace(System.out);
         }
         return empleados;
-        
     }
     
     public int insertar(Empleado empleado){
@@ -51,10 +50,9 @@ public class EmpleadoDAO {
         try(Connection conn = Conexion.getConnection();
                 PreparedStatement stmt =  conn.prepareStatement(SQL_INSERT)){
             stmt.setString(1, empleado.getNombre());
-            stmt.setString(2, empleado.getApellido());
-            stmt.setString(3, empleado.getEmail());
-            stmt.setString(4, empleado.getTelefono());
-            stmt.setDouble(5, empleado.getSaldo());
+            stmt.setString(2, empleado.getEmpresa());
+            stmt.setString(3, empleado.getDescripcion());
+            stmt.setDouble(4, empleado.getSalario());
             
             rows = stmt.executeUpdate();
         } catch (SQLException ex) {
@@ -70,13 +68,11 @@ public class EmpleadoDAO {
             try(ResultSet rs = stmt.executeQuery()){
                 if(rs.next()){
                     empleado.setNombre(rs.getString("nombre"));
-                    empleado.setApellido(rs.getString("apellido"));
-                    empleado.setEmail(rs.getString("email"));
-                    empleado.setTelefono(rs.getString("telefono"));
-                    empleado.setSaldo(rs.getDouble("saldo"));
+                    empleado.setEmpresa(rs.getString("empresa"));
+                    empleado.setDescripcion(rs.getString("descripcion"));
+                    empleado.setSalario(rs.getDouble("salario"));
                 }
             }
-            
         } catch (SQLException ex) {
            ex.printStackTrace(System.out);
         }
@@ -88,11 +84,10 @@ public class EmpleadoDAO {
         try(Connection conn = Conexion.getConnection();
                 PreparedStatement stmt =  conn.prepareStatement(SQL_UPDATE)){
             stmt.setString(1, empleado.getNombre());
-            stmt.setString(2, empleado.getApellido());
-            stmt.setString(3, empleado.getEmail());
-            stmt.setString(4, empleado.getTelefono());
-            stmt.setDouble(5, empleado.getSaldo());
-            stmt.setInt(6, empleado.getIdEmpleado());
+            stmt.setString(2, empleado.getEmpresa());
+            stmt.setString(3, empleado.getDescripcion());
+            stmt.setDouble(4, empleado.getSalario());
+            stmt.setInt(5, empleado.getIdEmpleado());
             
             rows = stmt.executeUpdate();
         } catch (SQLException ex) {

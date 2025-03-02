@@ -1,3 +1,4 @@
+// /webapps/infoEmpleo-GA7-220501096-AA2-EV02/ControlEmpleados/src/main/java/datos/Conexion.java
 package datos;
 
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
  */
 public class Conexion {
     private static final String JDBC_URL = 
-            "jdbc:mysql://localhost:3306/control_empleados?"
+            "jdbc:mysql://localhost:3306/info_empleo_db?"
             + "useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "0613";
@@ -33,4 +34,3 @@ public class Conexion {
         return getDataSource().getConnection();
     }
 }
-

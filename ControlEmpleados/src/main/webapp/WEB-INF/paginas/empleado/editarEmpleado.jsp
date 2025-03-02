@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Editar Cliente</title>
+        <title>Editar Empleado</title>
         <!--Bootstrap CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!--Bootstrap Iconos-->
@@ -13,8 +13,8 @@
         <!--Cabecero-->
         <jsp:include page="/WEB-INF/paginas/comunes/cabecero.jsp"/>
 
-        <!--Formulario de edicion de un cliente-->
-        <form action="${pageContext.request.contextPath}/ServletControlador?accion=modificar&idCliente=${cliente.idCliente}"
+        <!--Formulario de edicion de un empleado-->
+        <form action="${pageContext.request.contextPath}/ServletControlador?accion=modificar&idEmpleado=${empleado.idEmpleado}"
               method="POST" class="was-validated">
 
             <!--Botones de navegacion de edicion-->
@@ -23,34 +23,34 @@
             <div class="container my-4">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <h4>Editar Cliente</h4>
+                        <h4>Editar Empleado</h4>
                     </div>
                     <div class="card-body">
 
                         <div class="form-group mb-3">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" required
-                                   value="${cliente.nombre}"/>
+                                   value="${empleado.nombre}"/>
                         </div>
                         <div class="form-group mb-3">
                             <label for="apellido">Apellido</label>
                             <input type="text" class="form-control" id="apellido" name="apellido" required
-                                   value="${cliente.apellido}"/>
+                                   value="${empleado.apellido}"/>
                         </div>
                         <div class="form-group mb-3">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email" required 
-                                   value="${cliente.email}"/>
+                                   value="${empleado.email}"/>
                         </div>
                         <div class="form-group mb-3">
                             <label for="telefono">Tel?fono</label>
                             <input type="tel" class="form-control" id="telefono" name="telefono" required 
-                                   value="${cliente.telefono}"/>
+                                   value="${empleado.telefono}"/>
                         </div>
                         <div class="form-group mb-3">
                             <label for="saldo">Saldo</label>
                             <input type="number" class="form-control" id="saldo" name="saldo" required
-                                   step="any" value="${cliente.saldo}"/>
+                                   step="any" value="${empleado.saldo}"/>
                         </div>
                         <button type="submit" class="btn btn-success">Guardar Cambios</button>
 

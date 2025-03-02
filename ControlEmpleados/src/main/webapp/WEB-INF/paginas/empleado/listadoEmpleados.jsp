@@ -1,13 +1,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!--Listado Clientes-->
-<section id="clientes">
+<!--Listado Empleados-->
+<section id="empleados">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Listado de Clientes</h4>
+                        <h4>Listado de Empleados</h4>
                     </div>
                     <table class="table table-striped">
                         <thead class="thead-dark">
@@ -19,19 +19,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="cliente" items="${clientes}" varStatus="status">
+                            <c:forEach var="empleado" items="${empleados}" varStatus="status">
                                 <tr>
                                     <td>${status.count}</td>
-                                    <td>${cliente.nombre} ${cliente.apellido}</td>
-                                    <td><fmt:formatNumber value="${cliente.saldo}" 
+                                    <td>${empleado.nombre} ${empleado.apellido}</td>
+                                    <td><fmt:formatNumber value="${empleado.saldo}" 
                                                       type="currency"/>
                                     </td>
                                     <td>
-                                        <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idCliente=${cliente.idCliente}"
+                                        <a href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idEmpleado=${empleado.idEmpleado}"
                                            class="btn btn-secondary btn-sm">
                                             <i class="bi bi-pencil"></i> Editar
                                         </a>
-                                        <a href="${pageContext.request.contextPath}/ServletControlador?accion=eliminar&idCliente=${cliente.idCliente}"
+                                        <a href="${pageContext.request.contextPath}/ServletControlador?accion=eliminar&idEmpleado=${empleado.idEmpleado}"
                                            class="btn btn-danger btn-sm">
                                             <i class="bi bi-trash"></i> Eliminar
                                         </a>   
@@ -55,9 +55,9 @@
 
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
-                        <h3>Total Clientes</h3>
+                        <h3>Total Empleados</h3>
                         <h4 class="display-6">
-                            <i class="bi bi-people"></i> ${totalClientes}
+                            <i class="bi bi-people"></i> ${totalEmpleados}
                         </h4>
                     </div>
                 </div>

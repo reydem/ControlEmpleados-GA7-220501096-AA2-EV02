@@ -1,12 +1,12 @@
-<div class="modal fade" id="agregarClienteModal" tabindex="-1" aria-labelledby="agregarClienteLabel"
+<div class="modal fade" id="agregarEmpleadoModal" tabindex="-1" aria-labelledby="agregarEmpleadoLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
-                <h5 class="modal-title" id="agregarClienteLabel">Agregar Cliente</h5>
+                <h5 class="modal-title" id="agregarEmpleadoLabel">Agregar Empleado</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <!--Formulario para agregar un nuevo cliente-->
+            <!--Formulario para agregar un nuevo empleado-->
             <form action="${pageContext.request.contextPath}/ServletControlador?accion=insertar"
                   method="POST" class="was-validated">
                 <div class="modal-body">

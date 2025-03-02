@@ -4,22 +4,22 @@ package modelo;
  *
  * @author ubaldo
  */
-public class Cliente {
-    private int idCliente;
+public class Empleado {
+    private int idEmpleado;
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
     private double saldo;
 
-    public Cliente() {
+    public Empleado() {
     }
 
-    public Cliente(int idCliente) {
-        this.idCliente = idCliente;
+    public Empleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
-    public Cliente(String nombre, String apellido, String email, String telefono, double saldo) {
+    public Empleado(String nombre, String apellido, String email, String telefono, double saldo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -27,8 +27,8 @@ public class Cliente {
         this.saldo = saldo;
     }
 
-    public Cliente(int idCliente, String nombre, String apellido, String email, String telefono, double saldo) {
-        this.idCliente = idCliente;
+    public Empleado(int idEmpleado, String nombre, String apellido, String email, String telefono, double saldo) {
+        this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -36,12 +36,12 @@ public class Cliente {
         this.saldo = saldo;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public String getNombre() {
@@ -86,7 +86,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "idCliente=" + idCliente + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + ", saldo=" + saldo + '}';
+        return "Empleado{" + "idEmpleado=" + idEmpleado + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + ", saldo=" + saldo + '}';
     }
     
 }

@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-3">
                 <button type="button" class="btn btn-primary btn-block w-100" data-bs-toggle="modal"
-                        data-bs-target="#agregarClienteModal">
-                    <i class="bi bi-plus-circle"></i> Agregar Cliente
+                        data-bs-target="#agregarEmpleadoModal">
+                    <i class="bi bi-plus-circle"></i> Agregar Empleado
                 </button>
             </div>
         </div>

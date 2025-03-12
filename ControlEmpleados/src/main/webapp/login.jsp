@@ -1,33 +1,64 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <!DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login - Control de Empleados</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+        <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <body class="d-flex align-items-center justify-content-center vh-100 bg-light">
-        <div class="card shadow p-4" style="width: 350px;">
-            <h3 class="text-center">Iniciar Sesión</h3>
-            <form action="LoginServlet" method="post">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Usuario</label>
-                    <input type="text" name="username" id="username" class="form-control" required>
+<body class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 font-nanum">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <a href="/">
+            <img src="${pageContext.request.contextPath}/assets/Logo.png" alt="Your Company"
+                class="mx-auto h-44 w-auto">
+        </a>
+        <h2 class="mt-10 text-center text-3xl font-bold tracking-tight text-gray-900">
+            Iniciar Sesión
+        </h2>
+    </div>
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm border-4 border-gray-400 rounded-[32px] bg-slate-300">
+        <form action="LoginServlet" method="post" class="space-y-4">
+            <div>
+                <label for="username" class="text-center block text-xl font-bold text-gray-900">
+                    Usuario:
+                </label>
+                <div class="mt-2 flex justify-center">
+
+                    <input type="text" name="username" id="username" required
+                        class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            <div>
+                <label for="password" class="text-center block text-xl font-bold text-gray-900">Contraseña:</label>
+                <div class="mt-2 flex justify-center">
+                    <input type="password" name="password" id="password" required
+                        class="block w-60 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-                <%-- Mensaje de error si las credenciales son incorrectas --%>
-                    <% String error=request.getParameter("error"); if (error !=null && error.equals("true")) { %>
-                        <p class="text-danger mt-3 text-center">Usuario o contraseña incorrectos</p>
-                        <% } %>
-            </form>
+            </div>
+            <div class="flex items-center ml-[70px]">
+                <input id="link-checkbox" type="checkbox" value=""
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
+                <label class="ms-2 text-sm font-medium text-black">Recuérdame</label>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit"
+                    class="flex w-36 justify-center rounded-md bg-black px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-500">Entrar</button>
+            </div>
+        </form>
+        <div class="mb-10">
+            <% String error=request.getParameter("error"); if (error !=null && error.equals("true")) { %>
+                <p class="mt-4 text-center text-sm text-black">Usuario o contraseña incorrectos</p>
+                <% } %>
+                    <p class="mt-4 text-center text-sm text-black">Aún no tengo cuenta, quiero
+                        <a href="register.jsp"
+                            class="font-semibold text-black hover:text-gray-500 underline">Registrarme</a>
+                    </p>
         </div>
-    </body>
+    </div>
+</body>
 
-    </html>
+</html>

@@ -1,23 +1,31 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <main class="flex-1 border-l-4 border-gray-400 bg-white"><span data-slot="control"
-      class="relative isolate block [&amp;_input]:has-[[data-slot=icon]:first-child]:pl-10 [&amp;_input]:has-[[data-slot=icon]:last-child]:pr-10 sm:[&amp;_input]:has-[[data-slot=icon]:first-child]:pl-8 sm:[&amp;_input]:has-[[data-slot=icon]:last-child]:pr-8 [&amp;>[data-slot=icon]]:pointer-events-none [&amp;>[data-slot=icon]]:absolute [&amp;>[data-slot=icon]]:top-3 [&amp;>[data-slot=icon]]:z-10 [&amp;>[data-slot=icon]]:size-5 sm:[&amp;>[data-slot=icon]]:top-2.5 sm:[&amp;>[data-slot=icon]]:size-4 [&amp;>[data-slot=icon]:first-child]:left-3 sm:[&amp;>[data-slot=icon]:first-child]:left-2.5 [&amp;>[data-slot=icon]:last-child]:right-3 sm:[&amp;>[data-slot=icon]:last-child]:right-2.5 [&amp;>[data-slot=icon]]:text-zinc-500 dark:[&amp;>[data-slot=icon]]:text-zinc-400"><svg
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon"
-        class="ml-5 ">
-        <path fill-rule="evenodd"
-          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-          clip-rule="evenodd"></path>
-      </svg><span data-slot="control"
-        class="border-2 border-gray-400 rounded-lg my-5 mx-5 w-auto max-w-[500px] sm:leading-[0.75rem] relative block w-full before:absolute before:inset-px before:rounded-[calc(theme(borderRadius.lg)-1px)] before:bg-white before:shadow dark:before:hidden after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:ring-inset after:ring-transparent sm:after:focus-within:ring-2 sm:after:focus-within:ring-blue-500 has-[[data-disabled]]:opacity-50 before:has-[[data-disabled]]:bg-zinc-950/5 before:has-[[data-disabled]]:shadow-none before:has-[[data-invalid]]:shadow-red-500/10"><input
-          name="search" aria-label="Search"
-          class="relative block w-full appearance-none rounded-lg px-[calc(theme(spacing[3.5])-1px)] py-[calc(theme(spacing[2.5])-1px)] sm:px-[calc(theme(spacing[3])-1px)] sm:py-[calc(theme(spacing[1.5])-1px)] text-base/6 text-zinc-950 placeholder:text-zinc-500 sm:text-sm/6 dark:text-white border border-zinc-950/10 data-[hover]:border-zinc-950/20 dark:border-white/10 dark:data-[hover]:border-white/20 bg-transparent dark:bg-white/5 focus:outline-none data-[invalid]:border-red-500 data-[invalid]:data-[hover]:border-red-500 data-[invalid]:dark:border-red-500 data-[invalid]:data-[hover]:dark:border-red-500 data-[disabled]:border-zinc-950/20 dark:data-[hover]:data-[disabled]:border-white/15 data-[disabled]:dark:border-white/15 data-[disabled]:dark:bg-white/[2.5%] dark:[color-scheme:dark]"
-          id="headlessui-input-:r3:" data-headlessui-state=""></span>
-      <div class="absolute top-[5px] right-[100px] bg-white text-black font-bold">Comunidad</div>
-      <div class="absolute top-[5px] right-[-120px] bg-white text-black font-bold">Soporte</div>
-    </span>
+  <main class="flex-1 border-l-4 border-gray-400 bg-white">
+
+    <div>
+      <div class="ml-4 mt-3 grid grid-cols-1">
+        <input type="email" name="email" id="email"
+          class="col-start-1 row-start-1 block w-[550px] rounded-md bg-white py-1 pr-3 pl-10 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:pl-9 sm:text-sm/6 border-2 border-gray-400"
+          placeholder="">
+
+        <svg class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
+          viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+          <path fill-rule="evenodd"
+            d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+            clip-rule="evenodd" />
+        </svg>
+      </div>
+
+      <div>
+        <div class="absolute top-[101px] right-[611px] bg-white text-black font-bold">Comunidad</div>
+        <div class="absolute top-[101px] right-[389px] bg-white text-black font-bold">Soporte</div>
+      </div>
+    </div>
+
+
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
       <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-        <div class="px-4 sm:px-6 lg:px-8">
+        <div class="px-4 sm:px-6 lg:px-8 border-t-4 border-gray-400 mt-[18px]">
           <div class="sm:flex sm:items-center">
             <div class="sm:flex-auto">
               <h1 class="text-base font-semibold text-gray-900">Comtrol Empleados</h1>

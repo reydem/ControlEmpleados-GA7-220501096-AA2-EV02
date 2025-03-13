@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <ul class="listado-empleados border-gray-400 border-t-4 my-0">
+          <ul class="listado-empleados border-gray-400 border-t-4 my-0 text-gray-950">
             <li class="empleado mx-auto flex flex-col mt-3 max-w-7xl items-start justify-between px-4 sm:px-6 lg:px-8">
               <button class="btn btn-light text-black font-bold hover:text-gray-300 flex items-center gap-2"><svg
                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"

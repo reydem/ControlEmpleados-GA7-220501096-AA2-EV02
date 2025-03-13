@@ -26,6 +26,25 @@
         }
       }
     </script>
+    <style>
+  .custom-button {
+    background-color: #7f1d1d;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .custom-button:hover {
+    background-color: #601010;
+
+
+  }
+  .bg-customGray{
+   background-color: #acacbf;
+  }
+</style>
 </head>
 
 <body>

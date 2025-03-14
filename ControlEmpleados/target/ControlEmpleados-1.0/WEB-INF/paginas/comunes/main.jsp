@@ -36,8 +36,8 @@
             </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
               <button id="btnOpenModal" type="button"
-                class="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                <i class="bi bi-plus-circle"></i>Agregar Empleado</button>
+                class="block rounded-md bg-gray-950 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <i class="bi bi-plus-circle"></i> Agregar Empleado</button>
             </div>
           </div>
           <div class="mt-8 flow-root">
@@ -230,11 +230,11 @@
 
       <!-- Modal (oculto por defecto) -->
       <div id="agregarEmpleadoModal"
-        class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-lg w-full max-w-2xl mx-4">
+        class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50 flex items-center justify-center ">
+        <div class="bg-white rounded-lg w-full max-w-2xl mx-4 border-4 border-gray-400 rounded-[32px]">
           <!-- Encabezado del Modal -->
-          <div class="flex justify-between items-center bg-blue-500 text-white p-4 rounded-t-lg">
-            <h5 class="text-lg font-semibold" id="agregarEmpleadoLabel">Agregar Empleado</h5>
+          <div class="flex justify-between items-center bg-white text-white p-4 rounded-t-lg">
+            <h5 class="text-lg font-semibold text-gray-500" id="agregarEmpleadoLabel">Agregar Empleado</h5>
             <button type="button" class="text-white text-2xl leading-none" id="closeModal">&times;</button>
           </div>
           <!-- Formulario para agregar un nuevo empleado -->
@@ -244,30 +244,30 @@
               <div>
                 <label for="nombre" class="block text-gray-700">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
               <div>
                 <label for="empresa" class="block text-gray-700">Empresa</label>
                 <input type="text" id="empresa" name="empresa" required
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
               <div>
-                <label for="descripcion" class="block text-gray-700">Descripción</label>
+                <label for=" descripcion" class="block text-gray-700">Descripción</label>
                 <input type="text" id="descripcion" name="descripcion" required
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
               <div>
-                <label for="salario" class="block text-gray-700">Salario</label>
+                <label for=" salario" class="block text-gray-700">Salario</label>
                 <input type="number" id="salario" name="salario" required step="any"
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
             </div>
             <!-- Pie de página del modal -->
-            <div class="flex justify-end space-x-2 mt-4">
+            <div class=" flex justify-end space-x-2 mt-4">
               <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded" id="cancelModal">
                 Cancelar
               </button>
-              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+              <button type="submit" class="bg-gray-950 hover:bg-gray-700 text-white px-4 py-2 rounded">
                 Guardar
               </button>
             </div>

@@ -1,29 +1,33 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-  <main class="flex-1 border-l-4 border-gray-400 bg-white">
 
-    <div>
-      <div class="ml-4 mt-3 grid grid-cols-1">
-        <input type="email" name="email" id="email"
-          class="col-start-1 row-start-1 block w-[550px] rounded-md bg-white py-1 pr-3 pl-10 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:pl-9 sm:text-sm/6 border-2 border-gray-400"
-          placeholder="">
-
-        <svg class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
-          viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-          <path fill-rule="evenodd"
-            d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
-            clip-rule="evenodd" />
-        </svg>
-      </div>
-
-      <div>
-        <div class="absolute top-[101px] right-[611px] bg-white text-black font-bold">Comunidad</div>
-        <div class="absolute top-[101px] right-[389px] bg-white text-black font-bold">Soporte</div>
-      </div>
-    </div>
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-      <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+      <main class="flex-1 border-l-4 border-gray-400 bg-white">
+
+
+        <div>
+          <div class="ml-4 mt-3 grid grid-cols-1">
+            <input type="email" name="email" id="email"
+              class="col-start-1 row-start-1 block w-[550px] rounded-md bg-white py-1 pr-3 pl-10 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:pl-9 sm:text-sm/6 border-2 border-gray-400"
+              placeholder="">
+
+            <svg class="pointer-events-none col-start-1 row-start-1 ml-3 size-5 self-center text-gray-400"
+              viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd"
+                d="M9 3.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11ZM2 9a7 7 0 1 1 12.452 4.391l3.328 3.329a.75.75 0 1 1-1.06 1.06l-3.329-3.328A7 7 0 0 1 2 9Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+
+          <div>
+            <div class="absolute top-[101px] right-[611px] bg-white text-black font-bold">Comunidad</div>
+            <div class="absolute top-[101px] right-[389px] bg-white text-black font-bold">Soporte</div>
+          </div>
+        </div>
+
+
 
         <div class="px-4 sm:px-6 lg:px-8 border-t-4 border-gray-400 mt-[18px]">
           <div class="sm:flex sm:items-center">
@@ -31,9 +35,9 @@
               <h1 class="text-base font-semibold text-gray-900">Comtrol Empleados</h1>
             </div>
             <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-              <button type="button"
-                class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add
-                user</button>
+              <button id="btnOpenModal" type="button"
+                class="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <i class="bi bi-plus-circle"></i>Agregar Empleado</button>
             </div>
           </div>
           <div class="mt-8 flow-root">
@@ -61,10 +65,10 @@
                       <tr class="even:bg-gray-50">
                         <td class="py-4 pr-3 pl-4 text-sm font-medium whitespace-nowrap text-gray-900 sm:pl-3">
                           ${status.count}</td>
-                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500">${empleado.nombre}</td>
-                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500">${empleado.empresa}</td>
-                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500">${empleado.descripcion}</td>
-                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500">
+                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-900">${empleado.nombre}</td>
+                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-900">${empleado.empresa}</td>
+                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-900">${empleado.descripcion}</td>
+                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-900">
                           <fmt:formatNumber value="${empleado.salario}" type="currency" />
                         </td>
                         <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500"><a
@@ -221,4 +225,80 @@
             </li>
           </ul>
         </div>
-  </main>
+      </main>
+
+
+      <!-- Modal (oculto por defecto) -->
+      <div id="agregarEmpleadoModal"
+        class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-2xl mx-4">
+          <!-- Encabezado del Modal -->
+          <div class="flex justify-between items-center bg-blue-500 text-white p-4 rounded-t-lg">
+            <h5 class="text-lg font-semibold" id="agregarEmpleadoLabel">Agregar Empleado</h5>
+            <button type="button" class="text-white text-2xl leading-none" id="closeModal">&times;</button>
+          </div>
+          <!-- Formulario para agregar un nuevo empleado -->
+          <form action="${pageContext.request.contextPath}/ServletControlador?accion=insertar" method="POST"
+            class="p-4">
+            <div class="space-y-4">
+              <div>
+                <label for="nombre" class="block text-gray-700">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+              <div>
+                <label for="empresa" class="block text-gray-700">Empresa</label>
+                <input type="text" id="empresa" name="empresa" required
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+              <div>
+                <label for="descripcion" class="block text-gray-700">Descripción</label>
+                <input type="text" id="descripcion" name="descripcion" required
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+              <div>
+                <label for="salario" class="block text-gray-700">Salario</label>
+                <input type="number" id="salario" name="salario" required step="any"
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+            </div>
+            <!-- Pie de página del modal -->
+            <div class="flex justify-end space-x-2 mt-4">
+              <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded" id="cancelModal">
+                Cancelar
+              </button>
+              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                Guardar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        // Elementos del modal
+        var modal = document.getElementById('agregarEmpleadoModal');
+        var btnOpen = document.getElementById('btnOpenModal');
+        var btnClose = document.getElementById('closeModal');
+        var btnCancel = document.getElementById('cancelModal');
+
+        // Abrir el modal al hacer clic en el botón "Agregar Empleado"
+        btnOpen.addEventListener('click', function () {
+          modal.classList.remove('hidden');
+        });
+
+        // Cerrar el modal al hacer clic en la "X" o en "Cancelar"
+        btnClose.addEventListener('click', function () {
+          modal.classList.add('hidden');
+        });
+        btnCancel.addEventListener('click', function () {
+          modal.classList.add('hidden');
+        });
+
+        // Cerrar el modal si se hace clic fuera del contenido
+        window.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            modal.classList.add('hidden');
+          }
+        });
+      </script>

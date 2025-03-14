@@ -51,7 +51,7 @@
         </form>
         <div class="mb-10">
             <% String error=request.getParameter("error"); if (error !=null && error.equals("true")) { %>
-                <p class="mt-4 text-center text-sm text-black">Usuario o contraseña incorrectos</p>
+                <p class="mt-4 text-center text-sm text-red-700">Usuario o contraseña incorrectos</p>
                 <% } %>
                     <p class="mt-4 text-center text-sm text-black">Aún no tengo cuenta, quiero
                         <a href="register.jsp"

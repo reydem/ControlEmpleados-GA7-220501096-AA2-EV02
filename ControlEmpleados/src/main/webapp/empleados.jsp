@@ -36,6 +36,8 @@
       <jsp:include page="/WEB-INF/paginas/comunes/aside-left.jsp" />
       <!--main-->
       <jsp:include page="/WEB-INF/paginas/comunes/main.jsp" />
+      <!--Modal agregar un empleado-->
+      <jsp:include page="/WEB-INF/paginas/empleado/agregarEmpleado.jsp" />
       <!--aside-right-->
       <jsp:include page="/WEB-INF/paginas/comunes/aside-right.jsp" />
     </div>
@@ -49,8 +51,7 @@
     <!--Listado de Empleados-->
     <jsp:include page="/WEB-INF/paginas/empleado/listadoEmpleados.jsp" />
 
-    <!--Modal agregar un empleado-->
-    <jsp:include page="/WEB-INF/paginas/empleado/agregarEmpleado.jsp" />
+
 
     <!--Pie p?gina-->
     <jsp:include page="/WEB-INF/paginas/comunes/piePagina.jsp" />

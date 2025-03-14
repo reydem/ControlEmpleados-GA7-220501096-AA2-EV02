@@ -8,14 +8,14 @@
                     <div class="ml-7">
 
                         <button type="button"
-                            class="rounded-lg bg-gray-950 px-2 py-1 text-xs font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Contenido</button>
+                            class="rounded-lg bg-gray-950 px-2 py-1 text-xs font-semibold text-white shadow-xs hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Contenido</button>
 
 
 
                     </div>
                     <div class="ml-7"><a href="/login">
                             <button type="button"
-                                class="rounded-lg bg-gray-300 px-1 py-1 text-[9px] font-semibold text-black shadow-xs hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Cerrar
+                                class="rounded-lg bg-gray-300 px-1 py-1 text-[9px] font-semibold text-black shadow-xs hover:bg-gray-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Cerrar
                                 seccion</button>
 
 

@@ -71,17 +71,20 @@
                         <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-900">
                           <fmt:formatNumber value="${empleado.salario}" type="currency" />
                         </td>
-                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500"><a
-                            href="${pageContext.request.contextPath}/ServletControlador?accion=editar&idEmpleado=${empleado.idEmpleado}"
-                            class="btn btn-secondary btn-sm">
+                        <td class="px-3 py-4 text-sm whitespace-nowrap text-gray-500">
+                          <!-- Botón para editar, se pasa la información a través de atributos data- -->
+                          <button type="button"
+                            class="editarEmpleado bg-blue-500 hover:bg-blue-700 text-white px-2 py-1 rounded mr-2"
+                            data-id="${empleado.idEmpleado}" data-nombre="${empleado.nombre}"
+                            data-empresa="${empleado.empresa}" data-descripcion="${empleado.descripcion}"
+                            data-salario="${empleado.salario}">
                             <i class="bi bi-pencil"></i> Editar
-                          </a>
+                          </button>
                           <a href="${pageContext.request.contextPath}/ServletControlador?accion=eliminar&idEmpleado=${empleado.idEmpleado}"
-                            class="btn btn-danger btn-sm">
+                            class="bg-red-500 hover:bg-red-700 text-white px-2 py-1 rounded">
                             <i class="bi bi-trash"></i> Eliminar
                           </a>
                         </td>
-
                       </tr>
                     </c:forEach>
                     <!-- More people... -->
@@ -299,6 +302,106 @@
         window.addEventListener('click', function (event) {
           if (event.target === modal) {
             modal.classList.add('hidden');
+          }
+        });
+      </script>
+
+
+      <!-- Modal para editar empleado (oculto por defecto) -->
+      <div id="editarEmpleadoModal"
+        class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-2xl mx-4">
+          <!-- Encabezado del Modal -->
+          <div class="flex justify-between items-center bg-blue-500 text-white p-4 rounded-t-lg">
+            <h5 class="text-lg font-semibold" id="editarEmpleadoLabel">Editar Empleado</h5>
+            <button type="button" class="text-white text-2xl leading-none" id="cerrarEditarModal">&times;</button>
+          </div>
+          <!-- Formulario de edición -->
+          <form id="formEditarEmpleado" action="" method="POST" class="p-4">
+            <div class="space-y-4">
+              <div>
+                <label for="editarNombre" class="block text-gray-700">Nombre</label>
+                <input type="text" id="editarNombre" name="nombre" required
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+              <div>
+                <label for="editarEmpresa" class="block text-gray-700">Empresa</label>
+                <input type="text" id="editarEmpresa" name="empresa" required
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+              <div>
+                <label for="editarDescripcion" class="block text-gray-700">Descripción</label>
+                <input type="text" id="editarDescripcion" name="descripcion" required
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+              <div>
+                <label for="editarSalario" class="block text-gray-700">Salario</label>
+                <input type="number" id="editarSalario" name="salario" required step="any"
+                  class="w-full border border-gray-300 rounded p-2" />
+              </div>
+            </div>
+            <!-- Pie del modal -->
+            <div class="flex justify-end space-x-2 mt-4">
+              <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded"
+                id="cancelarEditarModal">
+                Cancelar
+              </button>
+              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                Guardar Cambios
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <script>
+        // Referencias del modal de edición
+        var editarModal = document.getElementById('editarEmpleadoModal');
+        var cerrarEditarModal = document.getElementById('cerrarEditarModal');
+        var cancelarEditarModal = document.getElementById('cancelarEditarModal');
+        var formEditarEmpleado = document.getElementById('formEditarEmpleado');
+
+        // Función para abrir el modal y cargar datos
+        function abrirEditarModal(button) {
+          var idEmpleado = button.getAttribute('data-id');
+          var nombre = button.getAttribute('data-nombre');
+          var empresa = button.getAttribute('data-empresa');
+          var descripcion = button.getAttribute('data-descripcion');
+          var salario = button.getAttribute('data-salario');
+
+          // Cargar valores en los campos del modal
+          document.getElementById('editarNombre').value = nombre;
+          document.getElementById('editarEmpresa').value = empresa;
+          document.getElementById('editarDescripcion').value = descripcion;
+          document.getElementById('editarSalario').value = salario;
+
+          // Actualizar la acción del formulario con el id del empleado
+          formEditarEmpleado.action = "${pageContext.request.contextPath}/ServletControlador?accion=modificar&idEmpleado=" + idEmpleado;
+
+          // Mostrar el modal
+          editarModal.classList.remove('hidden');
+        }
+
+        // Asignar el evento a todos los botones "Editar"
+        var editarButtons = document.querySelectorAll('.editarEmpleado');
+        editarButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            abrirEditarModal(this);
+          });
+        });
+
+        // Cerrar el modal cuando se hace clic en "x" o en "Cancelar"
+        cerrarEditarModal.addEventListener('click', function () {
+          editarModal.classList.add('hidden');
+        });
+        cancelarEditarModal.addEventListener('click', function () {
+          editarModal.classList.add('hidden');
+        });
+
+        // Cerrar el modal si se hace clic fuera del contenido
+        window.addEventListener('click', function (event) {
+          if (event.target === editarModal) {
+            editarModal.classList.add('hidden');
           }
         });
       </script>

@@ -247,22 +247,22 @@
               <div>
                 <label for="nombre" class="block text-gray-700">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required
-                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950 bg-white text-gray-950" />
               </div>
               <div>
                 <label for="empresa" class="block text-gray-700">Empresa</label>
                 <input type="text" id="empresa" name="empresa" required
-                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950 bg-white text-gray-950" />
               </div>
               <div>
                 <label for=" descripcion" class="block text-gray-700">Descripción</label>
                 <input type="text" id="descripcion" name="descripcion" required
-                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950 bg-white text-gray-950" />
               </div>
               <div>
                 <label for=" salario" class="block text-gray-700">Salario</label>
                 <input type="number" id="salario" name="salario" required step="any"
-                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950 bg-white text-gray-950" />
               </div>
             </div>
             <!-- Pie de página del modal -->
@@ -310,10 +310,10 @@
       <!-- Modal para editar empleado (oculto por defecto) -->
       <div id="editarEmpleadoModal"
         class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-lg w-full max-w-2xl mx-4">
+        <div class="bg-white rounded-lg w-full max-w-2xl mx-4 border-4 border-gray-400 rounded-[32px]">
           <!-- Encabezado del Modal -->
-          <div class="flex justify-between items-center bg-blue-500 text-white p-4 rounded-t-lg">
-            <h5 class="text-lg font-semibold" id="editarEmpleadoLabel">Editar Empleado</h5>
+          <div class="flex justify-between items-center bg-white text-white p-4 rounded-t-lg">
+            <h5 class="text-lg font-semibold text-gray-500" id="editarEmpleadoLabel">Editar Empleado</h5>
             <button type="button" class="text-white text-2xl leading-none" id="cerrarEditarModal">&times;</button>
           </div>
           <!-- Formulario de edición -->
@@ -322,22 +322,22 @@
               <div>
                 <label for="editarNombre" class="block text-gray-700">Nombre</label>
                 <input type="text" id="editarNombre" name="nombre" required
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
               <div>
                 <label for="editarEmpresa" class="block text-gray-700">Empresa</label>
                 <input type="text" id="editarEmpresa" name="empresa" required
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
               <div>
                 <label for="editarDescripcion" class="block text-gray-700">Descripción</label>
                 <input type="text" id="editarDescripcion" name="descripcion" required
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
               <div>
                 <label for="editarSalario" class="block text-gray-700">Salario</label>
                 <input type="number" id="editarSalario" name="salario" required step="any"
-                  class="w-full border border-gray-300 rounded p-2" />
+                  class="w-full border border-gray-300 rounded p-2 bg-white text-gray-950" />
               </div>
             </div>
             <!-- Pie del modal -->
@@ -346,7 +346,7 @@
                 id="cancelarEditarModal">
                 Cancelar
               </button>
-              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+              <button type="submit" class="bg-gray-950 hover:bg-gray-700 text-white px-4 py-2 rounded">
                 Guardar Cambios
               </button>
             </div>
